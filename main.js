@@ -1,4 +1,5 @@
-import logger from './logger.js'
+import logger from './logger.js';
+
 window.onload = function () {
 	const phaserConfig = {
     type: Phaser.AUTO,

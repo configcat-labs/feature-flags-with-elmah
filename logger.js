@@ -3,7 +3,7 @@ const logger = new Elmahio({
   logId: 'YOUR-LOG-ID',
   application: 'My Application',
   filter: function (message) {
-    	return message.severity === 'Error' && errorFilterEnabled
+    	return message.severity === 'Error' && errorFilterEnabled;
     }
 	})
 
@@ -17,21 +17,25 @@ const logger = new Elmahio({
 
 	logger.on('message', function (message) {
 			if(!message.user) {
-				message.user = getMockUser().email
+				message.user = getMockUser().email;
 			}
 	});
 
+try {
 	const configcatClient = configcat.getClient('YOUR-SDK-KEY');
-	var errorFilterEnabled;
+	var errorFilterEnabled = false; // default value
 
 	async function setFlagValue() {
 		errorFilterEnabled = await configcatClient.getValueAsync("enable_error_filtering", false, getMockUser()
 		);
 	}
-	setFlagValue()
+	setFlagValue();
 
 	configcatClient.on('configChanged', function () {
-		setFlagValue()
+		setFlagValue();
 	})
+} catch(error) {
+	console.error(error);
+}
 
 export default logger;
