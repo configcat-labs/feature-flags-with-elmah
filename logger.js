@@ -8,16 +8,14 @@ export default function setUpLogger () {
 	    }
 		});
 
-	function getMockUser () {
+	try {
+		const configcatClient = configcat.getClient('YOUR-SDK-KEY');
+
 		const user = {
 			identifier: '12345',
 			email: 'zayyad@zmscorp.com'
-			};
-		return user;
-		}
+		};
 
-	try {
-		const configcatClient = configcat.getClient('YOUR-SDK-KEY');
 		var errorFilterEnabled = false; // default value
 	
 		async function setFlagValue() {
