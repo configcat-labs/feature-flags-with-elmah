@@ -1,10 +1,13 @@
-import logger from './logger.js';
+import setUpLogger from './logger.js';
 
 window.onload = function () {
+	const logger = setUpLogger();
+
 	const phaserConfig = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
+    scale: { autoCenter: Phaser.Scale.CENTER_BOTH },
     physics: {
     	default: 'arcade',
     	arcade: {
