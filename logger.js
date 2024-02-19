@@ -8,13 +8,19 @@ export default function setUpLogger () {
 	    }
 		});
 
-	try {
-		const configcatClient = configcat.getClient('YOUR-SDK-KEY');
-
 		const user = {
 			identifier: '12345',
 			email: 'zayyad@zmscorp.com'
 		};
+
+		logger.on('message', function (message) {
+			if(!message.user) {
+				message.user = user.email;
+			}
+		});
+	try {
+		const configcatClient = configcat.getClient('YOUR-SDK-KEY');
+
 
 		var errorFilterEnabled = false; // default value
 	
