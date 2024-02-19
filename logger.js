@@ -13,7 +13,7 @@ export default function setUpLogger () {
 			email: 'zayyad@zmscorp.com'
 		};
 
-		logger.on('message', function (message) {
+		elmahLogger.on('message', function (message) {
 			if(!message.user) {
 				message.user = user.email;
 			}
