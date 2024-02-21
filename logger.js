@@ -2,14 +2,13 @@ export default function setUpLogger () {
 	const elmahLogger = new Elmahio({
 	  apiKey: 'YOUR-API-KEY',
 	  logId: 'YOUR-LOG-ID',
-	  application: 'My Application',
+	  application: 'ZPlatform',
 	  filter: function (message) {
 	    	return message.severity === 'Error' && errorFilterEnabled;
 	    }
 		});
 
 		const user = {
-			identifier: '12345',
 			email: 'zayyad@zmscorp.com'
 		};
 
@@ -19,13 +18,17 @@ export default function setUpLogger () {
 			}
 		});
 	try {
-		const configcatClient = configcat.getClient('YOUR-SDK-KEY');
-
+		const configcatClient = configcat.getClient(
+			'YOUR-SDK-KEY',
+			configcat.PollingMode.AutoPoll,
+			{
+    		pollIntervalSeconds: 4
+  		});
 
 		var errorFilterEnabled = false; // default value
 	
 		async function setFlagValue() {
-			errorFilterEnabled = await configcatClient.getValueAsync("enable_error_filtering", false, getMockUser()
+			errorFilterEnabled = await configcatClient.getValueAsync("enable_error_filtering", false, user
 			);
 		}
 		setFlagValue();
