@@ -1,6 +1,6 @@
 Read.me template:
 
-# Sample application name and/or blogpost title
+# ZPlatform
 
 #### (Optional) In case the blog post is already published, please add: [Read the blog post here](https://configcat.com/blog/)
 
