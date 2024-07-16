@@ -12,7 +12,7 @@ The game was built with Phaser.js. It uses elmah.io and [ConfigCat](https://conf
 - Knowledge of JavaScript
 - Basic knowledge of game development is a plus
 
-Follow these steps to clone this repository on your computer:
+Follow these steps to run this repository on your computer:
 - Clone the repository on your computer.
 - Navigate to the newly created folder.
 ```
