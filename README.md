@@ -1,10 +1,6 @@
-Read.me template:
-
 # ZPlatform
 
-#### (Optional) In case the blog post is already published, please add: [Read the blog post here](https://configcat.com/blog/)
-
-This repository contains the source code for the platformer game in the article: Disabling error alerts at runtime with ConfigCat and elmah.io.
+This repository contains the source code for the platformer game in the article: [Disabling error alerts at runtime with ConfigCat and elmah.io](https://medium.com/@sigewuzhere/disabling-error-alerts-at-runtime-with-elmah-io-and-configcat-e7c5e15ddf23).
 
 The game was built with Phaser.js. It uses elmah.io and [ConfigCat](https://configcat.com/) to filter error alerts for specific users. 
 
